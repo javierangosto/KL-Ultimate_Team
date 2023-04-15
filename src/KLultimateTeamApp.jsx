@@ -1,10 +1,16 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+
+import { Card } from './components'
+import { getPlayerById, getTeamById } from './db'
 
 export const KLultimateTeamApp = () => {
-  const [count, setCount] = useState(0)
+  
+  const player = getPlayerById(1,0);
+  const club = getTeamById(1);
+  console.log(player);
 
   return (
-    <h1>KLultimateTeamApp</h1>
+      <>
+      <Card player={player} club={club}/>
+      </>
   )
 }
